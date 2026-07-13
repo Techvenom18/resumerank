@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  jobs Job[]
+}
+
+model Job {
+  id                 String   @id @default(uuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title              String
+  description        String
+  requiredSkills     String[]
+  preferredSkills    String[]
+  minExperienceYears Int?
+  createdAt          DateTime @default(now())
+
+  candidates Candidate[]
+}
+
+model Candidate {
+  id                        String    @id @default(uuid())
+  jobId                     String
+  job                       Job       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  name                      String
+  rawResumeText             String
+  extractedSkills           String[]
+  extractedExperienceYears  Float?
+  extractedEducation        String?
+  fitScore                  Float?
+  scoreBreakdown            Json?
+  status                    CandidateStatus @default(NEW)
+  processedAt               DateTime?
+  createdAt                 DateTime  @default(now())
+}
+
+enum CandidateStatus {
+  NEW
+  SHORTLISTED
+  REJECTED
+}
