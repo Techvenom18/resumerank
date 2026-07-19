@@ -30,7 +30,7 @@ export default function LandingLeaderboard() {
   const list = settled ? FINAL_ORDER : SHUFFLED_START;
 
   return (
-    <div className="w-full max-w-sm rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+    <div className="w-full max-w-sm rounded-xl border border-gray-200 bg-white/70 backdrop-blur-md p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between px-1">
         <span className="text-xs font-medium uppercase tracking-wide text-gray-400">
           Ranked candidates
