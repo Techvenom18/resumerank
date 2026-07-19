@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-end">
+        <div className="relative z-10 flex justify-center md:justify-end">
           <LandingLeaderboard />
         </div>
       </section>
@@ -188,8 +188,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 dark:border-gray-800">
         <div className="mx-auto max-w-6xl px-6 text-center text-xs text-gray-400 dark:text-gray-500">
-          Built as a trial task for the Digital Heroes Full Stack Developer
-          Program.
+          <p>
+            Built as a trial task for the Digital Heroes Full Stack Developer
+            Program.
+          </p>
+          <p className="mt-1">© 2026 Sumit Kumar. All rights reserved.</p>
         </div>
       </footer>
     </main>

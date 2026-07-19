@@ -11,12 +11,12 @@ const DOTS = [
 export default function AuthGlow() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-black"
+      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       aria-hidden="true"
     >
       {/* Central radial glow behind the card */}
       <div
-        className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/35 blur-[120px]"
+        className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400/25 blur-[110px] dark:bg-amber-500/35 dark:blur-[120px]"
         style={{ animation: "glow-pulse 6s ease-in-out infinite" }}
       />
 
@@ -24,7 +24,7 @@ export default function AuthGlow() {
       {DOTS.map((dot, i) => (
         <span
           key={i}
-          className="absolute h-[3px] w-[3px] rounded-full bg-amber-100"
+          className="absolute h-[3px] w-[3px] rounded-full bg-amber-600/60 dark:bg-amber-100"
           style={{
             top: dot.top,
             left: dot.left,

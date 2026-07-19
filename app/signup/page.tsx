@@ -40,11 +40,11 @@ export default function SignupPage() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center px-4">
+    <main className="relative flex min-h-screen items-center justify-center bg-white/80 px-4 backdrop-blur-[2px] dark:bg-gray-950/80">
       <AuthGlow />
 
-      <div className="w-full max-w-sm rounded-2xl border border-gray-800 bg-gray-900/80 p-8 shadow-xl backdrop-blur-md">
-        <h1 className="mb-6 text-center text-2xl font-semibold text-white">
+      <div className="w-full max-w-sm rounded-2xl border border-gray-200 bg-white/80 p-8 shadow-xl backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/80">
+        <h1 className="mb-6 text-center text-2xl font-semibold text-gray-900 dark:text-white">
           Create your account
         </h1>
 
@@ -52,7 +52,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="email"
-              className="mb-1 block text-sm font-medium text-gray-300"
+              className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Email
             </label>
@@ -62,7 +62,7 @@ export default function SignupPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
               placeholder="you@example.com"
             />
           </div>
@@ -70,7 +70,7 @@ export default function SignupPage() {
           <div>
             <label
               htmlFor="password"
-              className="mb-1 block text-sm font-medium text-gray-300"
+              className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Password
             </label>
@@ -81,13 +81,13 @@ export default function SignupPage() {
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
               placeholder="At least 8 characters"
             />
           </div>
 
           {error && (
-            <p className="text-sm text-red-400" role="alert">
+            <p className="text-sm text-red-600 dark:text-red-400" role="alert">
               {error}
             </p>
           )}
@@ -101,9 +101,9 @@ export default function SignupPage() {
           </button>
         </form>
 
-        <p className="mt-4 text-center text-sm text-gray-400">
+        <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
           Already have an account?{" "}
-          <Link href="/login" className="font-medium text-amber-400 underline">
+          <Link href="/login" className="font-medium text-amber-600 underline dark:text-amber-400">
             Log in
           </Link>
         </p>
