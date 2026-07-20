@@ -33,7 +33,7 @@ export default function StatusControls({
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm text-gray-400">Status:</span>
+      <span className="text-sm text-gray-500 dark:text-gray-400">Status:</span>
       <button
         disabled={loading || status === "SHORTLISTED"}
         onClick={() => updateStatus("SHORTLISTED")}
@@ -52,12 +52,20 @@ export default function StatusControls({
         <button
           disabled={loading}
           onClick={() => updateStatus("NEW")}
-          className="rounded-md border border-gray-700 px-3 py-1.5 text-sm font-medium text-gray-300 hover:bg-gray-800 disabled:opacity-40"
+          className="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-40 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
         >
           Reset
         </button>
       )}
-      <span className="ml-2 rounded-full bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-300">
+      <span
+        className={`ml-2 rounded-full px-2 py-0.5 text-xs font-medium ${
+          status === "SHORTLISTED"
+            ? "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400"
+            : status === "REJECTED"
+            ? "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400"
+            : "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+        }`}
+      >
         Currently: {status}
       </span>
     </div>

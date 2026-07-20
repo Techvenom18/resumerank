@@ -54,20 +54,20 @@ export default function NewJobPage() {
   }
 
   return (
-    <main className="relative min-h-screen px-6 py-10">
+    <main className="relative min-h-screen bg-white/80 px-6 py-10 backdrop-blur-[2px] dark:bg-gray-950/80">
       <AuthGlow />
 
       <div className="relative z-10 mx-auto max-w-2xl">
-        <h1 className="mb-6 text-2xl font-semibold text-white">
+        <h1 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           Create a new job posting
         </h1>
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-5 rounded-lg border border-gray-800 bg-gray-900/70 p-6 backdrop-blur-sm"
+          className="space-y-5 rounded-lg border border-gray-200 bg-white/70 p-6 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/70"
         >
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-300">
+            <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
               Job title
             </label>
             <input
@@ -75,12 +75,12 @@ export default function NewJobPage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Senior Frontend Engineer"
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-300">
+            <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
               Job description
             </label>
             <textarea
@@ -89,14 +89,14 @@ export default function NewJobPage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Paste or write the job description..."
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-300">
+            <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
               Required skills{" "}
-              <span className="font-normal text-gray-500">
+              <span className="font-normal text-gray-400 dark:text-gray-500">
                 (comma-separated)
               </span>
             </label>
@@ -105,14 +105,14 @@ export default function NewJobPage() {
               value={requiredSkills}
               onChange={(e) => setRequiredSkills(e.target.value)}
               placeholder="e.g. React, TypeScript, MySQL"
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-300">
+            <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
               Preferred skills{" "}
-              <span className="font-normal text-gray-500">
+              <span className="font-normal text-gray-400 dark:text-gray-500">
                 (comma-separated, optional)
               </span>
             </label>
@@ -120,14 +120,14 @@ export default function NewJobPage() {
               value={preferredSkills}
               onChange={(e) => setPreferredSkills(e.target.value)}
               placeholder="e.g. Docker, Kubernetes"
-              className="w-full rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-300">
+            <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
               Minimum years of experience{" "}
-              <span className="font-normal text-gray-500">(optional)</span>
+              <span className="font-normal text-gray-400 dark:text-gray-500">(optional)</span>
             </label>
             <input
               type="number"
@@ -135,12 +135,12 @@ export default function NewJobPage() {
               value={minExperience}
               onChange={(e) => setMinExperience(e.target.value)}
               placeholder="e.g. 2"
-              className="w-32 rounded-md border border-gray-700 bg-gray-800/60 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
+              className="w-32 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:border-gray-700 dark:bg-gray-800/60 dark:text-white dark:placeholder-gray-500"
             />
           </div>
 
           {error && (
-            <p className="text-sm text-red-400" role="alert">
+            <p className="text-sm text-red-600 dark:text-red-400" role="alert">
               {error}
             </p>
           )}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import LandingLeaderboard from "./LandingLeaderboard";
 import { ThemeToggle } from "./ThemeProvider";
 import HeroGlow from "./HeroGlow";
+import TiltCard from "./TiltCard";
 
 export default function Home() {
   return (
@@ -74,7 +75,7 @@ export default function Home() {
       <section className="border-t border-gray-100 py-16 dark:border-gray-800">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div>
+            <TiltCard>
               <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-800 dark:bg-amber-500/20 dark:text-amber-400">
                 %
               </div>
@@ -86,8 +87,9 @@ export default function Home() {
                 experience, and education — weighted the way you define the
                 job.
               </p>
-            </div>
-            <div>
+            </TiltCard>
+
+            <TiltCard>
               <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-800 dark:bg-amber-500/20 dark:text-amber-400">
                 ↑
               </div>
@@ -98,8 +100,9 @@ export default function Home() {
                 Upload a CSV of resumes and get a fully ranked, sortable list
                 back in seconds — no manual sorting through a spreadsheet.
               </p>
-            </div>
-            <div>
+            </TiltCard>
+
+            <TiltCard>
               <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100 text-sm font-bold text-amber-800 dark:bg-amber-500/20 dark:text-amber-400">
                 ?
               </div>
@@ -111,7 +114,7 @@ export default function Home() {
                 which didn&apos;t, and how experience and education factored
                 in.
               </p>
-            </div>
+            </TiltCard>
           </div>
         </div>
       </section>
@@ -125,7 +128,7 @@ export default function Home() {
           How it works
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="flex gap-4">
+          <TiltCard className="flex gap-4">
             <span className="text-2xl font-bold text-amber-500">01</span>
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -136,8 +139,9 @@ export default function Home() {
                 and minimum experience.
               </p>
             </div>
-          </div>
-          <div className="flex gap-4">
+          </TiltCard>
+
+          <TiltCard className="flex gap-4">
             <span className="text-2xl font-bold text-amber-500">02</span>
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -148,8 +152,9 @@ export default function Home() {
                 job automatically.
               </p>
             </div>
-          </div>
-          <div className="flex gap-4">
+          </TiltCard>
+
+          <TiltCard className="flex gap-4">
             <span className="text-2xl font-bold text-amber-500">03</span>
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -160,7 +165,7 @@ export default function Home() {
                 rationale, and shortlist.
               </p>
             </div>
-          </div>
+          </TiltCard>
         </div>
       </section>
 

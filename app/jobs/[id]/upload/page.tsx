@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import AuthGlow from "../../../AuthGlow";
 
 export default function UploadCandidatesPage() {
   const router = useRouter();
@@ -54,29 +55,32 @@ export default function UploadCandidatesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 px-6 py-10">
-      <div className="mx-auto max-w-xl">
-        <h1 className="mb-2 text-2xl font-semibold text-gray-900">
+    <main className="relative min-h-screen bg-white/80 px-6 py-10 backdrop-blur-[2px] dark:bg-gray-950/80">
+      <AuthGlow />
+
+      <div className="relative z-10 mx-auto max-w-xl">
+        <h1 className="mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
           Upload candidates
         </h1>
-        <p className="mb-6 text-sm text-gray-600">
-          Upload a CSV with two columns: <code className="rounded bg-gray-200 px-1">name</code> and{" "}
-          <code className="rounded bg-gray-200 px-1">resume_text</code>.
+        <p className="mb-6 text-sm text-gray-600 dark:text-gray-400">
+          Upload a CSV with two columns:{" "}
+          <code className="rounded bg-gray-200 px-1 dark:bg-gray-800">name</code> and{" "}
+          <code className="rounded bg-gray-200 px-1 dark:bg-gray-800">resume_text</code>.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-lg border border-gray-200 bg-white p-6"
+          className="space-y-4 rounded-lg border border-gray-200 bg-white/70 p-6 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/70"
         >
           <input
             type="file"
             accept=".csv"
             onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-md file:border-0 file:bg-gray-900 file:px-4 file:py-2 file:text-sm file:font-medium file:text-white hover:file:bg-gray-800"
+            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-md file:border-0 file:bg-amber-500 file:px-4 file:py-2 file:text-sm file:font-medium file:text-gray-900 hover:file:bg-amber-400 dark:text-gray-400"
           />
 
           {error && (
-            <p className="text-sm text-red-600" role="alert">
+            <p className="text-sm text-red-600 dark:text-red-400" role="alert">
               {error}
             </p>
           )}
@@ -84,24 +88,24 @@ export default function UploadCandidatesPage() {
           <button
             type="submit"
             disabled={loading}
-            className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 disabled:opacity-50"
+            className="rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-amber-400 disabled:opacity-50"
           >
             {loading ? "Processing..." : "Upload and score"}
           </button>
         </form>
 
         {result && (
-          <div className="mt-6 rounded-lg border border-gray-200 bg-white p-6">
-            <p className="font-medium text-gray-900">
+          <div className="mt-6 rounded-lg border border-gray-200 bg-white/70 p-6 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/70">
+            <p className="font-medium text-gray-900 dark:text-white">
               {result.inserted} candidate(s) added and scored.
             </p>
 
             {result.failedRows.length > 0 && (
               <div className="mt-3">
-                <p className="text-sm font-medium text-red-600">
+                <p className="text-sm font-medium text-red-600 dark:text-red-400">
                   {result.failedRows.length} row(s) failed:
                 </p>
-                <ul className="mt-1 list-inside list-disc text-sm text-gray-600">
+                <ul className="mt-1 list-inside list-disc text-sm text-gray-600 dark:text-gray-400">
                   {result.failedRows.map((r) => (
                     <li key={r.row}>
                       Row {r.row}: {r.reason}
@@ -113,7 +117,7 @@ export default function UploadCandidatesPage() {
 
             <button
               onClick={() => router.push(`/jobs/${jobId}`)}
-              className="mt-4 rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              className="mt-4 rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-amber-400"
             >
               View ranked candidates
             </button>
