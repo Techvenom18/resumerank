@@ -69,7 +69,7 @@ Manually tested end-to-end: signup → login → job creation → CSV upload →
 - [ ] PDF resume upload (currently CSV-only)
 - [ ] LLM-based resume parsing for unstructured resumes
 
-## Screenshots
+## Demo Video
 
 ![ResumeRank demo](docs/screenshots/resumerank_demo_hq.gif)
 
