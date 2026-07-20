@@ -27,7 +27,7 @@ A fully working, deployed product where a recruiter can:
 - Open any candidate to see the full rationale behind their score — not just the number
 - Shortlist or reject candidates, with status persisted
 
-![ResumeRank demo](resumerank_demo.gif)
+![ResumeRank demo](resumerank_demo_hq.gif)
 *Ranked candidate list → opening a candidate → full score breakdown*
 
 Live demo: https://resumerank-two.vercel.app
