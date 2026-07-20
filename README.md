@@ -79,4 +79,4 @@ MIT — see [LICENSE](LICENSE)
 
 ---
 
-*Built as a trial task for the Digital Heroes Full Stack Developer Program.*
+*Developed and Design by Sumit Kumar as a trial task for the Digital Heroes Full Stack Developer Program.*
