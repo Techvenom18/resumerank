@@ -71,7 +71,7 @@ Manually tested end-to-end: signup → login → job creation → CSV upload →
 
 ## Screenshots
 
-See `docs/screenshots/` for the core flows.
+![ResumeRank demo](docs/screenshots/resumerank_demo_hq.gif)
 
 ## License
 
